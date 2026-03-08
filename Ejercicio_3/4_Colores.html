@@ -6,13 +6,72 @@
     <title>Colores</title>
 </head>
 <body>
-    <div id="Div1" style="width: 200px; height: 200px; background-color: blue;"></div>
-    <div id="Div2" style="width: 200px; height: 200px; background-color: red;"></div>
-    <div id="Div3" style="width: 200px; height: 200px; background-color: green;"></div>
-    <div id="Div4" style="width: 200px; height: 200px; background-color: yellow;"></div>    
+    <div id="Div1" style="width: 200px; height: 200px; background-color: blue; display: inline-block;"></div>
+    <div id="Div2" style="width: 200px; height: 200px; background-color: red; display: inline-block;"></div>
+    <div id="Div3" style="width: 200px; height: 200px; background-color: green; display: inline-block;"></div>
+    <div id="Div4" style="width: 200px; height: 200px; background-color: yellow; display: inline-block;"></div>    
 <br>
-    <div id="Key"></div>
-jhkhkuhuihukh
-    <script>  </script>
+    <div id="key" style="width:200px; height:200px; background-color:white; border:2px solid black;"></div>
+
+    <script>
+        let ColorGlobal = "";
+        document.getElementById("Div1").addEventListener("click", function(){
+            this.style.backgroundColor = "black";
+        });
+
+        document.getElementById("Div2").addEventListener("click", function(){
+            this.style.backgroundColor = "black";
+        });
+
+        document.getElementById("Div3").addEventListener("click", function(){
+            this.style.backgroundColor = "black";
+        });
+
+        document.getElementById("Div4").addEventListener("click", function(){
+            this.style.backgroundColor = "black";
+        });
+
+
+        document.addEventListener("keydown", function(event){
+            if(event.key === "a"){
+                ColorGlobal = "pink";
+                document.getElementById("key").style.backgroundColor = ColorGlobal;
+            }
+
+            else if(event.key === "s"){
+                ColorGlobal = "orange";
+                document.getElementById("key").style.backgroundColor = ColorGlobal;
+            }
+
+            else if(event.key === "d"){
+                ColorGlobal = "skyblue";
+                document.getElementById("key").style.backgroundColor = ColorGlobal;
+            }
+
+
+            else if(event.key === "q"){
+                crearDiv("purple");
+            }
+
+            else if(event.key === "w"){
+                crearDiv("gray");
+            }
+
+            else if(event.key === "e"){
+                crearDiv("brown");
+            }
+        })
+
+        function crearDiv(color){
+            const nuevoDiv = document.createElement("div");
+            nuevoDiv.style.width = "200px";
+            nuevoDiv.style.height = "200px";
+            nuevoDiv.style.backgroundColor = color;
+            nuevoDiv.style.display = "inline-block";
+            nuevoDiv.style.margin = "5px";
+            document.body.appendChild(nuevoDiv);
+        }
+
+    </script>
 </body>
 </html>
